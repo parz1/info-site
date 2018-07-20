@@ -2,11 +2,18 @@
   <div id="app">
       <div class="top-nav">
         <i class="el-icon-info icon"></i>
-        <div class="icontext">杭电助手</div>
+        <div class="icontext">Hduhelper杭电助手</div>
         <i class="el-icon-more iconmore"></i>
       </div>
-      
-        <el-button>iT's Me</el-button>
+      <swipe
+        v-model="index"
+        :autoplayTime="autoplayTime"
+        id="c-swipe"
+      >
+        <swipe-item><img src="./assets/12.jpg"/></swipe-item>
+        <swipe-item><img src="./assets/15.jpg"/></swipe-item>
+        <swipe-item><img src="./assets/58.jpg"/></swipe-item>
+      </swipe>
   </div>
 </template>
 
@@ -15,7 +22,9 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      index: 0,
+      autoplayTime: 2000,
+
     }
   }
 }
@@ -37,8 +46,8 @@ export default {
 }
 .icontext{
   float: left;
-  margin-left: 5px;
-  font-size: 20px;
+  margin-left: 10px;
+  font-size: 15px;
   color: #fff;
 }
 .iconmore{
@@ -47,5 +56,18 @@ export default {
   font-size: 20px;
   color: #fff;
   margin-top: 15px;
+}
+#c-swipe{
+  text-align: center; 
+  line-height: 200px; 
+  height: 200px; 
+  background: #42b983;
+}
+#c-swipe swipe-item{
+  height: 200px; 
+  line-height: 200px
+}
+#c-swipe swipe-item img{
+  width: 100%;
 }
 </style>
